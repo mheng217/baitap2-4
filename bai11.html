@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 11</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        background-color: #222;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      .menu {
+        display: flex;
+      }
+      .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+      }
+      .menu a:hover {
+        background-color: #444;
+      }
+      .menu-icon {
+        display: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        .menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #222;
+          position: absolute;
+          top: 50px;
+          left: 0;
+        }
+        .menu a {
+          text-align: center;
+          padding: 15px;
+          border-top: 1px solid #444;
+        }
+        .menu-icon {
+          display: block;
+        }
+        #menu-toggle:checked ~ .menu {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <input type="checkbox" id="menu-toggle" style="display: none" />
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+      </div>
+    </nav>
+  </body>
+</html>
